@@ -12,10 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -24,12 +21,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "car")
 public class Car implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+
     @Column(name = "name")
     private String name;
 
@@ -65,7 +63,6 @@ public class Car implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Car)) {
             return false;
         }
@@ -80,5 +77,5 @@ public class Car implements Serializable {
     public String toString() {
         return "az.proqramci.jpaminibook.beans.Car[ id=" + id + " ]";
     }
-    
+
 }
