@@ -18,17 +18,18 @@ public class MainWithJDBC {
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection("url", "username", "password");//Baza ilə əlaqə 
         Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("SELECT id,name,surname,age FROM Car");
-        List<Person> cars = new ArrayList<Person>();
+        ResultSet rs = statement.executeQuery("SELECT id,name,surname,age FROM Person");
+        List<Person> persons = new ArrayList<Person>();
         while (rs.next()) {
             Person person = new Person();
             person.setPersonId(rs.getInt("id"));
             person.setName(rs.getString("name"));
             person.setSurname(rs.getString("surname"));
             person.setAge(rs.getInt("age"));
+            persons.add(person);
         }
         
-        for (Person person : cars) {
+        for (Person person : persons) {
             System.out.println("Person name: " + person.getName() + " Person surname: " + person.getSurname() + " Person age: " + person.getAge());
         }
         connection.close();

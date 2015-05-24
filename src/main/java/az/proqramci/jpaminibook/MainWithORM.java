@@ -18,9 +18,9 @@ public class MainWithORM {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         TypedQuery<Person> typedQuery = entityManager.createQuery("SELECT p FROM Person p", Person.class);
-        List<Person> cars = typedQuery.getResultList();
+        List<Person> persons = typedQuery.getResultList();
 
-        for (Person person : cars) {
+        for (Person person : persons) {
             System.out.println("Person name: " + person.getName() + " Person surname: " + person.getSurname()+ " Person age: " + person.getAge());
         }
         
