@@ -1,7 +1,6 @@
 package az.proqramci.jpaminibook;
 
-import az.proqramci.jpaminibook.beans.Car;
-import java.util.ArrayList;
+import az.proqramci.jpaminibook.beans.Person;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,11 +17,11 @@ public class MainWithORM {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("JPAMiniBook");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        TypedQuery<Car> typedQuery = entityManager.createQuery("SELECT c FROM Car c", Car.class);
-        List<Car> cars = typedQuery.getResultList();
+        TypedQuery<Person> typedQuery = entityManager.createQuery("SELECT p FROM Person p", Person.class);
+        List<Person> cars = typedQuery.getResultList();
 
-        for (Car car : cars) {
-            System.out.println("Car id: " + car.getId() + " Car Name: " + car.getName());
+        for (Person person : cars) {
+            System.out.println("Person name: " + person.getName() + " Person surname: " + person.getSurname()+ " Person age: " + person.getAge());
         }
         
         entityManager.close();

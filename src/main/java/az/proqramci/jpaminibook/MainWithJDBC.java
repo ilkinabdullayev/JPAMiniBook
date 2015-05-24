@@ -1,6 +1,6 @@
 package az.proqramci.jpaminibook;
 
-import az.proqramci.jpaminibook.beans.Car;
+import az.proqramci.jpaminibook.beans.Person;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -15,19 +15,21 @@ import java.util.List;
 public class MainWithJDBC {
 
     public static void main(String[] args) throws Exception {
-        Class.forName("com.mysql.jdbc.Driver");       
-        Connection connection = DriverManager.getConnection("url","username","password");//Baza ilə əlaqə 
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("url", "username", "password");//Baza ilə əlaqə 
         Statement statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("SELECT id,name FROM Car");
-        List<Car> cars = new ArrayList<Car>();
+        ResultSet rs = statement.executeQuery("SELECT id,name,surname,age FROM Car");
+        List<Person> cars = new ArrayList<Person>();
         while (rs.next()) {
-            Car car = new Car();
-            car.setId(rs.getInt("id"));
-            car.setName(rs.getString("name"));
-            cars.add(car);
+            Person person = new Person();
+            person.setPersonId(rs.getInt("id"));
+            person.setName(rs.getString("name"));
+            person.setSurname(rs.getString("surname"));
+            person.setAge(rs.getInt("age"));
         }
-        for (Car car : cars) {
-            System.out.println("Car id: " + car.getId() + " Car Name: " + car.getName());
+        
+        for (Person person : cars) {
+            System.out.println("Person name: " + person.getName() + " Person surname: " + person.getSurname() + " Person age: " + person.getAge());
         }
         connection.close();
     }
