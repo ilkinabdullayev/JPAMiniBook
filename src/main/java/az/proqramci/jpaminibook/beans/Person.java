@@ -6,12 +6,14 @@
 package az.proqramci.jpaminibook.beans;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -37,6 +39,9 @@ public class Person implements Serializable {
 
     @Column(name = "AGE")
     private int age;
+    
+    @OneToMany(mappedBy = "person",targetEntity = Telephone.class,fetch = FetchType.LAZY)
+    private List<Telephone> telephones;
 
     public Person() {
     }
