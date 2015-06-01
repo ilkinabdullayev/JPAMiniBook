@@ -5,12 +5,14 @@
         
         <class>az.proqramci.jpaminibook.beans.Person</class>
         <class>az.proqramci.jpaminibook.beans.Telephone</class>
+        <class>az.proqramci.jpaminibook.beans.squence.Department</class>
+        <class>az.proqramci.jpaminibook.beans.squence.Job</class>
         
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpaminibook"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mysql"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.password" value="book"/>
+            <property name="javax.persistence.jdbc.password" value="java"/>
             <!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />-->
             <property name="eclipselink.ddl-generation" value="none" />
             <property name="eclipselink.logging.level" value="FINEST" />
