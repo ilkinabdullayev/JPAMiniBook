@@ -5,13 +5,11 @@
  */
 package az.proqramci.jpaminibook.persist;
 
-import az.proqramci.jpaminibook.beans.Person;
 import az.proqramci.jpaminibook.beans.squence.Department;
-import java.util.List;
+import az.proqramci.jpaminibook.beans.squence.Job;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
 
 /**
  *
@@ -24,13 +22,20 @@ public class PersistSamples {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         Department department = null;
-
+        Job job = null;
         entityManager.getTransaction().begin();
-        for (int i = 1; i < 40; i++) {
-            department = new Department();
-            department.setName("IT"+i);
-            entityManager.persist(department);
-        }
+//        for (int i = 1; i < 40; i++) {
+//            department = new Department();
+//            department.setName("IT"+i);
+//            entityManager.persist(department);
+//        }
+        department = new Department();
+        department.setName("IT");
+        entityManager.persist(department);
+
+        job = new Job();
+        job.setName("Software Developer");
+        entityManager.persist(job);
 
         entityManager.getTransaction().commit();
 
