@@ -7,13 +7,15 @@
     <class>az.proqramci.jpaminibook.beans.squence.Department</class>
     <class>az.proqramci.jpaminibook.beans.squence.Job</class>
     <class>az.proqramci.jpaminibook.beans.compositykey.Address</class>
+    <class>az.proqramci.jpaminibook.beans.compositykey.complex.Dog</class>
+    <class>az.proqramci.jpaminibook.beans.compositykey.complex.DogHouse</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mysql"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="java"/>
+      <property name="javax.persistence.jdbc.password" value="book"/>
       <!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />-->
-      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+      <property name="eclipselink.ddl-generation" value="none"/>
       <property name="eclipselink.logging.level" value="FINEST"/>
     </properties>
   </persistence-unit>

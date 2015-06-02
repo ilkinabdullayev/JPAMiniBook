@@ -1,3 +1,5 @@
 1.http://uaihebert.com/jpa-queries-and-tips/
 ------------------Sequence--------------------------------------------
 2.http://royontechnology.blogspot.com/2010/04/note-on-allocationsize-parameter-of.html
+----------------------------------------------------------------------
+3.http://uaihebert.com/demeter-law/
