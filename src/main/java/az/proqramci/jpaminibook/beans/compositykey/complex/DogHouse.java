@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 
 /**
  *
- * @author Administrator
+ * @author Ilkin Abdullayev
  */
 @Entity
 public class DogHouse {

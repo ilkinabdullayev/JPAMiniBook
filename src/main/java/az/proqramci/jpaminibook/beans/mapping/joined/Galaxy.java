@@ -4,26 +4,29 @@
  * and open the template in the editor.
  */
 
-package az.proqramci.jpaminibook.beans.compositykey.complex;
+package az.proqramci.jpaminibook.beans.mapping.joined;
 
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.SecondaryTable;
-import javax.persistence.SecondaryTables;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 /**
  *
  * @author Ilkin Abdullayev
  */
 @Entity
-@SecondaryTables({
-@SecondaryTable(name = "DOG_SECONDARY_A",pkJoinColumns = {@PrimaryKeyJoinColumn(name = "DOG_ID")}),
-@SecondaryTable(name = "DOG_SECONDARY_B",pkJoinColumns = {@PrimaryKeyJoinColumn(name = "DOG_ID")})
-})
-public class Dog {
+@Table(name = "GALAXY")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorColumn(name = "DTYPE")
+public abstract class Galaxy {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
     private String name;
@@ -42,6 +45,7 @@ public class Dog {
 
     public void setName(String name) {
         this.name = name;
-    }   
+    }
+    
     
 }

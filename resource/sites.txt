@@ -3,3 +3,4 @@
 2.http://royontechnology.blogspot.com/2010/04/note-on-allocationsize-parameter-of.html
 ----------------------------------------------------------------------
 3.http://uaihebert.com/demeter-law/
+4.http://uaihebert.com/jpa-mapping-date-and-enum/

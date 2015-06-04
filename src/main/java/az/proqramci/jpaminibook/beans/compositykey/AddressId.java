@@ -14,7 +14,7 @@ import javax.persistence.IdClass;
 
 /**
  *
- * @author Administrator
+ * @author Ilkin Abdullayev
  */
 @Embeddable
 public class AddressId implements Serializable {

@@ -28,7 +28,7 @@ public class DBConnect {
 
     public void run() {
         PersistSamples persistSamples = new PersistSamples(entityManager);
-        persistSamples.persistMethodSecond();
+      //  persistSamples.persistMethodSixth();
     }
 
     public static void main(String[] args) {
