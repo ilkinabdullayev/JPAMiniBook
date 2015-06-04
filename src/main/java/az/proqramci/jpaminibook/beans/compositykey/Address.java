@@ -17,12 +17,33 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "ADDRESS")
+@IdClass(AddressId.class)
 public class Address {
 
-    @EmbeddedId
-    private AddressId addressId;
+    @Id
+    private String coordinant;
+    
+    @Id
+    private String fullPath;
 
     private String name;
+
+    public String getCoordinant() {
+        return coordinant;
+    }
+
+    public void setCoordinant(String coordinant) {
+        this.coordinant = coordinant;
+    }
+
+    public String getFullPath() {
+        return fullPath;
+    }
+
+    public void setFullPath(String fullPath) {
+        this.fullPath = fullPath;
+    }  
+    
 
     public String getName() {
         return name;

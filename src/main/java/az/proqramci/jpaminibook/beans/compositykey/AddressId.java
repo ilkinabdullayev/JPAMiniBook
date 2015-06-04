@@ -16,12 +16,10 @@ import javax.persistence.IdClass;
  *
  * @author Ilkin Abdullayev
  */
-@Embeddable
 public class AddressId implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-
+    
     private String coordinant;
     private String fullPath;
 

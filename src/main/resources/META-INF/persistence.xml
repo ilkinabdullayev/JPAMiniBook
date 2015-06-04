@@ -2,7 +2,23 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="JPAMiniBook" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>az.proqramci.jpaminibook.beans.compositykey.complex.Dog</class>
+    <class>az.proqramci.jpaminibook.beans.compositykey.complex.DogHouse</class>
+    <class>az.proqramci.jpaminibook.beans.Person</class>
+    <class>az.proqramci.jpaminibook.beans.Telephone</class>
     <class>az.proqramci.jpaminibook.beans.compositykey.Address</class>
+    <class>az.proqramci.jpaminibook.beans.mapping.Call</class>
+    <class>az.proqramci.jpaminibook.beans.mapping.Cat</class>
+    <class>az.proqramci.jpaminibook.beans.mapping.Cellular</class>
+    <class>az.proqramci.jpaminibook.beans.mapping.collection.Persons</class>
+    <class>az.proqramci.jpaminibook.beans.mapping.joined.Galaxy</class>
+    <class>az.proqramci.jpaminibook.beans.mapping.joined.Guardians</class>
+    <class>az.proqramci.jpaminibook.beans.mapping.joined.Hero</class>
+    <class>az.proqramci.jpaminibook.beans.squence.Department</class>
+    <class>az.proqramci.jpaminibook.beans.squence.Job</class>
+    <class>az.proqramci.jpaminibook.beans.mapping.manytomany.Actor</class>
+    <class>az.proqramci.jpaminibook.beans.mapping.manytomany.ActorMovie</class>
+    <class>az.proqramci.jpaminibook.beans.mapping.manytomany.Movie</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpaminibook"/>
@@ -10,7 +26,7 @@
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="book"/>
       <!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />-->
-      <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
       <property name="eclipselink.logging.level" value="FINEST"/>
     </properties>
   </persistence-unit>
