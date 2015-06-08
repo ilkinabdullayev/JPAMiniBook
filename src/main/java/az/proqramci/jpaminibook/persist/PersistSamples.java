@@ -5,6 +5,8 @@
  */
 package az.proqramci.jpaminibook.persist;
 
+import az.proqramci.jpaminibook.beans.Person;
+import az.proqramci.jpaminibook.beans.Telephone;
 import az.proqramci.jpaminibook.beans.compositykey.complex.Dog;
 import az.proqramci.jpaminibook.beans.compositykey.complex.DogHouse;
 import az.proqramci.jpaminibook.beans.mapping.collection.Persons;
@@ -13,7 +15,9 @@ import az.proqramci.jpaminibook.beans.mapping.joined.Hero;
 import az.proqramci.jpaminibook.beans.squence.Department;
 import az.proqramci.jpaminibook.beans.squence.Job;
 import az.proqramci.jpaminibook.enums.State;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.EntityManager;
 
@@ -99,24 +103,52 @@ public class PersistSamples {
         entityManager.getTransaction().commit();
         close();
     }
-    
-      public void persistMethodSixth() {
-        Persons persons=new Persons();
+
+    public void persistMethodSixth() {
+        Persons persons = new Persons();
         persons.setName("Ilkin");
-        
-        Set<String> emails=new HashSet<String>();
+
+        Set<String> emails = new HashSet<String>();
         emails.add("ilkinabdullayev6@gmail.com");
         emails.add("ilkinabdullayev6@hotmail.com");
         emails.add("i.abdullayev@idrak.az");
         persons.setEmails(emails);
-        
-        Set<State> states=new HashSet<State>();
+
+        Set<State> states = new HashSet<State>();
         states.add(State.COOL);
         states.add(State.HAPPY);
         persons.setStates(states);
 
         entityManager.getTransaction().begin();
         entityManager.persist(persons);
+        entityManager.getTransaction().commit();
+        close();
+    }
+
+    public void persistMethodSeventh() {
+
+        Person person = new Person();
+        person.setName("Ilkin");
+        person.setAge(23);
+        person.setSurname("Abdullayev");
+
+        List<Telephone> tels = new ArrayList<Telephone>();
+//        Telephone telephone = new Telephone();
+//        telephone.setNumber("051-417-88-17");
+//        telephone.setPerson(person);
+//        telephone.setType("MOBILE");
+//        tels.add(telephone);
+
+        Telephone telephone1 = new Telephone();
+        telephone1.setNumber("012-594-07-80");
+        telephone1.setPerson(person);
+        telephone1.setType("HOME");
+        tels.add(telephone1);
+
+        person.setTelephones(tels);
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(person);
         entityManager.getTransaction().commit();
         close();
     }

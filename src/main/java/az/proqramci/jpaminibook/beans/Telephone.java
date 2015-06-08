@@ -6,6 +6,7 @@
 package az.proqramci.jpaminibook.beans;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,6 +40,38 @@ public class Telephone implements Serializable {
     @ManyToOne
     @JoinColumn(name = "PERSON_ID",referencedColumnName = "ID",nullable = false)
     private Person person;
+
+    public int getTelId() {
+        return telId;
+    }
+
+    public void setTelId(int telId) {
+        this.telId = telId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
     
 
 }

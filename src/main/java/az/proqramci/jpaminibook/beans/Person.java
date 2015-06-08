@@ -7,6 +7,7 @@ package az.proqramci.jpaminibook.beans;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -40,7 +41,7 @@ public class Person implements Serializable {
     @Column(name = "AGE")
     private int age;
     
-    @OneToMany(mappedBy = "person",targetEntity = Telephone.class,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "person",targetEntity = Telephone.class,fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
     private List<Telephone> telephones;
 
     public Person() {
@@ -73,6 +74,14 @@ public class Person implements Serializable {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
+    public List<Telephone> getTelephones() {
+        return telephones;
+    }
+
+    public void setTelephones(List<Telephone> telephones) {
+        this.telephones = telephones;
+    }   
 
     public int getAge() {
         return age;
